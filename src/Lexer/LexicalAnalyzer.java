@@ -9,6 +9,8 @@ public class LexicalAnalyzer {
 
     public List<Token> analyze(String input){
         List<Token> tokens = new ArrayList<>();
+        input = input.replace(";", " ;");
+        input = input.replace("=", " = ");
         String[] lexems = input.split("\\s+");
 
         for(String lexeme: lexems){

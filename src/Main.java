@@ -6,7 +6,8 @@ import java.util.List;
 public class Main{
     public static void main(String[] args){
         LexicalAnalyzer lexer = new LexicalAnalyzer();
-        String input = "int age = 25 ;";
+        String input = "int age=25;";
+
 
         List <Token> tokens = lexer.analyze(input);
 
