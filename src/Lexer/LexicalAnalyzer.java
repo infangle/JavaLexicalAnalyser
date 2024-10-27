@@ -7,8 +7,15 @@ public class LexicalAnalyzer {
 
     public static final List<String> keyword = List.of("int");
 
+    private String removeSingleLineComments(String input) {
+        // Remove all single-line comments starting with '//' until the end of the line
+        return input.replaceAll("//.*", "");
+    }
+    
+
     public List<Token> analyze(String input){
         List<Token> tokens = new ArrayList<>();
+        input = removeSingleLineComments(input);
         input = input.replace(";", " ;");
         input = input.replace("=", " = ");
         String[] lexems = input.split("\\s+");
